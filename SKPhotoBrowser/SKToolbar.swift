@@ -57,10 +57,13 @@ private extension SKToolbar {
         toolUpvoteButton.tintColor = UIColor.white
         
         var items = [UIBarButtonItem]()
-        //items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil))
-        if SKPhotoBrowserOptions.displayAction {
+        
+        if SKPhotoBrowserOptions.displayUpvote {
             items.append(toolUpvoteButton)
-            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: browser, action: nil))
+        }
+        items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil))
+        
+        if SKPhotoBrowserOptions.displayAction {
             items.append(toolActionButton)
         }
         setItems(items, animated: false)

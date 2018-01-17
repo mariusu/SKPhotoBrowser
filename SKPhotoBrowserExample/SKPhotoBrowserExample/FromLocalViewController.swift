@@ -19,6 +19,7 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
 
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
+        SKPhotoBrowserOptions.displayUpvote = true
         SKPhotoBrowserOptions.displayStatusbar = true
 
         setupTestData()
