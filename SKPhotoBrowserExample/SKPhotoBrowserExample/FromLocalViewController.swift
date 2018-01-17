@@ -101,6 +101,11 @@ extension FromLocalViewController {
         // handle dismissing custom actions
     }
     
+    func pressedUpvoteButton(_ photoIndex: Int) {
+        // your upvote implementations goes here
+        print("You upvoted photo no", photoIndex)
+    }
+    
     func removePhoto(index: Int, reload: (() -> Void)) {
         reload()
     }

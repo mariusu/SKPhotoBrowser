@@ -498,6 +498,10 @@ internal extension SKPhotoBrowser {
         }
     }
     
+    @objc func upvoteButtonPressed() {
+        delegate?.pressedUpvoteButton?(currentPageIndex)
+    }
+    
     func deleteImage() {
         defer {
             reloadData()

@@ -63,6 +63,13 @@ import Foundation
     @objc optional func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
     
     /**
+     Tells the delegate that the user pressed upvote button
+     
+     - Parameter photoIndex: the index of the current photo
+     */
+    @objc optional func pressedUpvoteButton(_ photoIndex: Int)
+    
+    /**
      Asks the delegate for the view for a certain photo. Needed to detemine the animation when presenting/closing the browser.
      
      - Parameter browser: reference to the calling SKPhotoBrowser

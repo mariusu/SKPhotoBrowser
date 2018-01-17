@@ -13,6 +13,10 @@ private let bundle = Bundle(for: SKPhotoBrowser.self)
 
 class SKToolbar: UIToolbar {
     var toolActionButton: UIBarButtonItem!
+    var toolUpvoteButton: UIBarButtonItem!
+    
+    let upvoteImage = SKUpvoteButton().currentImage
+    let upvoteButton = UIButton(type: .custom)
     
     fileprivate weak var browser: SKPhotoBrowser?
     
@@ -45,9 +49,18 @@ private extension SKToolbar {
         toolActionButton = UIBarButtonItem(barButtonSystemItem: .action, target: browser, action: #selector(SKPhotoBrowser.actionButtonPressed))
         toolActionButton.tintColor = UIColor.white
         
+        upvoteButton.setImage(upvoteImage, for: .normal)
+        upvoteButton.frame = CGRect(x: 0, y: 0, width: (upvoteImage?.size.width)!, height: (upvoteImage?.size.height)!)
+        upvoteButton.addTarget(browser, action: #selector(SKPhotoBrowser.upvoteButtonPressed), for: .touchUpInside)
+        
+        toolUpvoteButton = UIBarButtonItem(customView: upvoteButton)
+        toolUpvoteButton.tintColor = UIColor.white
+        
         var items = [UIBarButtonItem]()
-        items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil))
+        //items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil))
         if SKPhotoBrowserOptions.displayAction {
+            items.append(toolUpvoteButton)
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: browser, action: nil))
             items.append(toolActionButton)
         }
         setItems(items, animated: false)

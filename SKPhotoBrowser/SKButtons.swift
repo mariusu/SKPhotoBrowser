@@ -104,3 +104,7 @@ class SKDeleteButton: SKImageButton {
         hideFrame = CGRect(x: newScreenSize.width - size.width, y: -20, width: size.width, height: size.height)
     }
 }
+
+class SKUpvoteButton: SKImageButton {
+    override var imageName: String { return "btn_common_upvote_wh" }
+}
