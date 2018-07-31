@@ -63,6 +63,13 @@ import Foundation
     @objc optional func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
     
     /**
+     Tells the delegate that the user pressed delete button
+     
+     - Parameter photoIndex: the index of the current photo
+     */
+    @objc optional func pressedDeleteButton(_ photoIndex: Int)
+    
+    /**
      Tells the delegate that the user pressed upvote button
      
      - Parameter photoIndex: the index of the current photo

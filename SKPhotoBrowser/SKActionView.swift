@@ -80,6 +80,7 @@ class SKActionView: UIView {
     @objc func deleteButtonPressed(_ sender: UIButton) {
         guard let browser = self.browser else { return }
         
+        browser.delegate?.pressedDeleteButton?(browser.currentPageIndex)
         browser.delegate?.removePhoto?(browser, index: browser.currentPageIndex) { [weak self] in
             self?.browser?.deleteImage()
         }

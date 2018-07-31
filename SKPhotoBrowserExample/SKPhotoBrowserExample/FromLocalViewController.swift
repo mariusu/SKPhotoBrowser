@@ -107,6 +107,11 @@ extension FromLocalViewController {
         print("You upvoted photo no", photoIndex)
     }
     
+    func pressedDeleteButton(_ photoIndex: Int) {
+        // your delete implementations goes here
+        print("You pressed delete button", photoIndex)
+    }
+    
     func removePhoto(index: Int, reload: (() -> Void)) {
         reload()
     }
