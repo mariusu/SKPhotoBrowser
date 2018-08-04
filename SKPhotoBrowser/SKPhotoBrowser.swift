@@ -340,13 +340,6 @@ public extension SKPhotoBrowser {
         }
     }
     
-    func showMessageBox(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-        print("Alert showing")
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
     func getCurrentPageIndex() -> Int {
         return currentPageIndex
     }
@@ -507,7 +500,6 @@ internal extension SKPhotoBrowser {
     
     @objc func upvoteButtonPressed() {
         delegate?.pressedUpvoteButton?(currentPageIndex)
-        showMessageBox(title:"Takk for at du liker bildet", message: "")
     }
     
     func deleteImage() {
